@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :msg="message" :subtitle="subtitle"/>
+    <input type="text" v-model="subtitle" />
+    <button @click="generate"> Générer </button>
   </div>
 </template>
 
@@ -12,6 +14,17 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data(){
+    return {
+      message: 'Quittance Generator',
+      subtitle: 'Génerez vos quittances facilement !'
+    }
+  },
+  methods: {
+    generate() {
+      alert(this.subtitle)
+    }
   }
 }
 </script>

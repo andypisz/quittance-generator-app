@@ -1,12 +1,18 @@
 <template>
   <div class="hello">
     <h1 class="title">{{ msg }}</h1>
+    <MainList/>
   </div>
 </template>
 
 <script>
+import MainList from "./MainList";
+
 export default {
   name: 'HomePage',
+  components: {
+    MainList,
+  },
   props: {
     msg: String
   }
